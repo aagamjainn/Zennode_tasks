@@ -105,14 +105,13 @@ class ShoppingCart {
       }
 }
 
-// Example usage
 const productA = new Product('Product A', 20);
 const productB = new Product('Product B', 40);
 const productC = new Product('Product C', 50);
 
 const cart = new ShoppingCart();
 
-// Function to read user input
+
 function prompt(question) {
       const rl = readline.createInterface({
             input: process.stdin,
@@ -137,13 +136,12 @@ async function gatherUserInput(product) {
       cart.addToCart(product, parseInt(quantity), isGiftWrapped);
 }
 
-// IIFE to handle asynchronous nature of prompt
+
 (async () => {
-      // Gather user input for each product
+      
       await gatherUserInput(productA);
       await gatherUserInput(productB);
       await gatherUserInput(productC);
 
-      // Display the receipt
       cart.displayReceipt();
 })();
